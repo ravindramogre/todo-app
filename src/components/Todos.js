@@ -9,19 +9,20 @@ import {
   handleEdit,
 } from "../redux/todoapp/actions";
 
-const Todos = () => {
+const Todos = ({ handleEditClick, editFormVisibility }) => {
   const todos = useSelector((state) => state.operationsReducer);
   const dispatch = useDispatch();
 
   return todos.map((todo) => (
     <div key={todo.id} className="todo-box">
       <div className="content">
-        <input
-          type="checkbox"
-          checked={todo.completed}
-          onChange={() => dispatch(handleCheckBox(todo.id))}
-        ></input>
-
+        {!editFormVisibility && (
+          <input
+            type="checkbox"
+            checked={todo.completed}
+            onChange={() => dispatch(handleCheckBox(todo.id))}
+          ></input>
+        )}
         <p
           className="description"
           style={
@@ -33,20 +34,22 @@ const Todos = () => {
           {todo.todo}
         </p>
       </div>
-      <div className="actions-box">
-        <span>
-          <Icon
-            onClick={() => dispatch(handleEdit(todo.id))}
-            icon={edit2}
-          ></Icon>
-        </span>
-        <span>
-          <Icon
-            onClick={() => dispatch(handleDelete(todo.id))}
-            icon={trash}
-          ></Icon>
-        </span>
-      </div>
+      {!editFormVisibility && (
+        <div className="actions-box">
+          <span>
+            <Icon
+              onClick={() => handleEditClick(todo)}
+              icon={edit2}
+            ></Icon>
+          </span>
+          <span>
+            <Icon
+              onClick={() => dispatch(handleDelete(todo.id))}
+              icon={trash}
+            ></Icon>
+          </span>
+        </div>
+      )}
     </div>
   ));
 };

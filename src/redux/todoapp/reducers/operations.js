@@ -1,4 +1,4 @@
-import { ADD_TODO, DELETE_ALL, CHECK_BOX, DELETE } from "../actions";
+import { ADD_TODO, DELETE_ALL, CHECK_BOX, DELETE, EDIT } from "../actions";
 
 const initialState = [
   { id: 1, todo: "Buy Laptop", completed: false },
@@ -27,7 +27,17 @@ export const operationsReducer = (state = initialState, action) => {
     case DELETE:
       var updated_state = [];
       state.forEach((todo) => {
-        if (todo.id !== action.id) {  
+        if (todo.id !== action.id) {
+          updated_state.push(todo);
+        }
+      });
+      return updated_state;
+    case EDIT:
+      var updated_state = [];
+      state.forEach((todo) => {
+        if (todo.id == action.payload.id) {
+          updated_state.push(action.payload);
+        } else {
           updated_state.push(todo);
         }
       });

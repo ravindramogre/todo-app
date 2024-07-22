@@ -1,4 +1,3 @@
-
 export const ADD_TODO = 'ADD_TODO';
 export const DELETE_ALL = 'DELETE_ALL';
 export const CHECK_BOX = "CHECKBOX";
@@ -29,9 +28,9 @@ export const handleDelete = (id) => {
         id
     }
 }
-export const handleEdit = (id) => {
+export const handleEdit = (payload) => {
     return {
         type: EDIT,
-        id
+        payload
     }
 }

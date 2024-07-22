@@ -71,30 +71,51 @@
 #completed{
   background-color: #008000;
   padding: 0px 12px 0px 12px;
+  font-size: small;
   border-radius: 6px;
   color: white;
 }
 #in_progress{
   background-color: orange;
   padding: 0px 12px 0px 12px;
+  font-size: small;
   border-radius: 6px;
   color: white;
 }
 #yet_to_start{
   background-color: blue;
   padding: 0px 12px 0px 12px;
+  font-size: small;
   border-radius: 6px;
   color: white;
 }
 
 .status{
-  margin-bottom: 16px !important;
-  padding-top: 16px !important;
-  margin-top: 16px !important;
+  padding: 10px 0px 10px 0px !important;
+  margin-bottom: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid gray;
   border-radius: 6px;
   gap: 8px;
+}
+
+.progress-bar {
+  position: relative;
+  max-width: 150px;
+  /* text-align: center; */
+  line-height: 1.5;
+
+}
+.progress-bar span {
+  position: relative;
+  /* text-align: center; */
+  color: #fff;
+  font-weight: bold;
+}
+.progress{
+  width: 150px;
+  text-align: center;
+  background-color: lightgray;
 }
