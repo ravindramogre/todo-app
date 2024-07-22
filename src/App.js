@@ -1,17 +1,11 @@
-import Form from './components/Form';
-import Todos from './components/Todos';
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteAll } from './redux/todoapp/actions';
+import Task from "./pages/Task";
+
 function App() {
-  const dispatch = useDispatch();
-  const todos = useSelector((state) => state.operationsReducer);
   return (
     <div className="wrapper">
-      <br></br>
-      <h1 className="text-center">TODO-APP USING REACT-REDUX</h1>
-      <Form />
-      <Todos />
-      {todos.length > 0 &&  <button onClick={() => dispatch(deleteAll())}className='btn btn-danger btn-md delete-all'>DELETE ALL</button>}
+      <h1 className="text-center">TODO-APP</h1>
+      <p className="text-center">make your todo list and track down your progress</p>
+      <Task />
     </div>
   );
 }

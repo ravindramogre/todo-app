@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../redux/todoapp/actions";
 const Form = () => {
-
   const [todoValue, setTodoValue] = useState('');
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,10 +19,10 @@ const Form = () => {
   }
   return (
     <form className="form-group custom-form" onSubmit={handleSubmit}>
-      <label>Add your todo-items</label>
       <div className="input-and-btn">
         <input
           type="text"
+          placeholder="add your todo-items here...."
           className="form-control"
           required
           value={todoValue}

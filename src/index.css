@@ -37,7 +37,12 @@
 
 .todo-box .content{
   display: flex;
+  flex-direction: row;
   align-items: center;
+}
+
+.todo-box .content .description{
+  word-break: break-word;
 }
 
 .todo-box .content p{
@@ -54,10 +59,42 @@
 }
 
 .actions-box{
+  display: flex;
   cursor: pointer;
 }
 
 .back-btn{
   margin-top: 5px;
   width: 100%;
+}
+
+#completed{
+  background-color: #008000;
+  padding: 0px 12px 0px 12px;
+  border-radius: 6px;
+  color: white;
+}
+#in_progress{
+  background-color: orange;
+  padding: 0px 12px 0px 12px;
+  border-radius: 6px;
+  color: white;
+}
+#yet_to_start{
+  background-color: blue;
+  padding: 0px 12px 0px 12px;
+  border-radius: 6px;
+  color: white;
+}
+
+.status{
+  margin-bottom: 16px !important;
+  padding-top: 16px !important;
+  margin-top: 16px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid gray;
+  border-radius: 6px;
+  gap: 8px;
 }
